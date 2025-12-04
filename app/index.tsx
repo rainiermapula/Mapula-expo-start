@@ -2,31 +2,39 @@ import { Text, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
-  const name: string = "Kent Ross"
+  const name: string = "Rainier";
+
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >npm 
-      <ScrollView>
-        <Text style={styles.Text1}>Welcome, {name}</Text>
-        <Text style={styles.Text2}>Hello World! Expo</Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scroll}>
+        <Text style={styles.title}>Welcome, {name}</Text>
+        <Text style={styles.subtitle}>Hello World! Expo</Text>
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  Text1: {
-    color: 'red',
-    fontSize: 40
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#fff",
   },
-  Text2: {
-    backgroundColor: 'red',
-    color: 'white',
-    fontSize: 50
-  }
-})
+  scroll: {
+    alignItems: "center",
+    padding: 20,
+  },
+  title: {
+    color: "blue",
+    fontSize: 40,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    backgroundColor: "black",
+    color: "white",
+    fontSize: 50,
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 10,
+  },
+});
